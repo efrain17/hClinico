@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlm_img_lef"
+        android:layout_weight="0.17"
+        android:src="@android:mipmap/sym_def_app_icon"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Serv. Nº 1115144051"
+        android:id="@+id/txtServicio"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:textColor="#5161bb"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/rlm_img_lef" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Dirección"
+        android:id="@+id/rlm_eti_dir"
+        android:layout_below="@+id/txtServicio"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/rlm_img_lef" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Calle 1 Avenida 1"
+        android:id="@+id/txtDireccion"
+        android:layout_below="@+id/rlm_eti_dir"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#000000"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-2dp"
+        android:layout_toRightOf="@+id/rlm_img_lef" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Titular"
+        android:id="@+id/rlm_eti_nom"
+        android:layout_below="@+id/txtDireccion"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/rlm_img_lef" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Sin titular"
+        android:id="@+id/txtTitular"
+        android:layout_below="@+id/rlm_eti_nom"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#000000"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="-2dp"
+        android:layout_toRightOf="@+id/rlm_img_lef" />
+</RelativeLayout>

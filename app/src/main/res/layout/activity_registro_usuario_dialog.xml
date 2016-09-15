@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ec.com.altura.aclient.RegistroUsuarioDialog"
+    android:padding="0dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/imageView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="#4052b5"
+        android:padding="0dp" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:gravity="center_vertical|top"
+            android:padding="10dp"
+            android:layout_below="@+id/imageView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayout">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/imageView4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre de usuario"
+                android:id="@+id/textView4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="14dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textNombre"
+                android:layout_below="@+id/textView4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="385dp"
+                android:layout_height="wrap_content"
+                android:text="N° Cedula"
+                android:id="@+id/textView5"
+                android:textSize="14dp"
+                android:layout_below="@+id/textNombre"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textCedula"
+                android:layout_below="@+id/textView5"
+                android:inputType="text|number"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="83dp"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:id="@+id/textView9"
+                android:textSize="14dp"
+                android:layout_below="@+id/textEmail"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="0.72" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textEmail"
+                android:layout_below="@+id/textView14"
+                android:inputType="textEmailAddress"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignRight="@+id/textCedula"
+                android:layout_alignEnd="@+id/textCedula" />
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="wrap_content"
+                android:text="Confirme email"
+                android:id="@+id/textView12"
+                android:textSize="14dp"
+                android:layout_above="@+id/textConfirEmail"
+                android:layout_alignLeft="@+id/switchEstado"
+                android:layout_alignStart="@+id/switchEstado" />
+
+            <EditText
+                android:layout_width="359dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textConfirEmail"
+                android:inputType="textEmailAddress"
+                android:layout_below="@+id/textView9"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/textView12"
+                android:layout_toStartOf="@+id/textView12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contraseña"
+                android:id="@+id/textView11"
+                android:textSize="14dp"
+                android:layout_below="@+id/textConfirEmail"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="0.83" />
+
+            <EditText
+                android:layout_width="363dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textContrasena"
+                android:inputType="textPassword"
+                android:layout_below="@+id/textView12"
+                android:layout_alignRight="@+id/textEmail"
+                android:layout_alignEnd="@+id/textEmail"
+                android:layout_toEndOf="@+id/textConfirEmail"
+                android:layout_toRightOf="@+id/textConfirEmail" />
+
+            <TextView
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:text="Confirme contraseña"
+                android:id="@+id/textView13"
+                android:textSize="14dp"
+                android:layout_above="@+id/textConfirContrasena"
+                android:layout_alignLeft="@+id/textView12"
+                android:layout_alignStart="@+id/textView12" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textConfirContrasena"
+                android:inputType="textPassword"
+                android:layout_below="@+id/textView11"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignRight="@+id/textConfirEmail"
+                android:layout_alignEnd="@+id/textConfirEmail" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aceptar términos legaes"
+                    android:id="@+id/switchEstado"
+                    android:checked="false"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="#4052b5"
+                    android:textOff="Sí"
+                    android:textOn="No" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

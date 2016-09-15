@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".out.Factura"
+    android:padding="0dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Servicio Seleccionado"
+        android:id="@+id/textCodServicio"
+        android:textSize="25dp"
+        android:textColor="#4c5db9"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:id="@+id/imageView2"
+        android:src="@mipmap/ic_focus"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:text="Carlos Efrain Coello Delgado"
+        android:layout_weight="0.15"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="2dp"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dirección"
+        android:id="@+id/textView8"
+        android:textSize="18dp"
+        android:layout_below="@+id/textCodServicio"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_alignRight="@+id/textCodServicio"
+        android:layout_alignEnd="@+id/textCodServicio" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Titular"
+        android:id="@+id/textView10"
+        android:textSize="18dp"
+        android:layout_below="@+id/textDireccion"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_alignRight="@+id/textDireccion"
+        android:layout_alignEnd="@+id/textDireccion" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Av Manabí - Granda Centeno XXX"
+        android:id="@+id/textDireccion"
+        android:textSize="14dp"
+        android:textColor="#060606"
+        android:layout_below="@+id/textView8"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:text="Carlos Efrain Coello Delgado"
+        android:id="@+id/textTitular"
+        android:textSize="14dp"
+        android:textColor="#060606"
+        android:layout_below="@+id/textView10"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_alignRight="@+id/textView10"
+        android:layout_alignEnd="@+id/textView10" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/space" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/imageView2">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20px"
+            android:layout_alignBottom="@+id/space"
+            android:layout_toLeftOf="@+id/space"
+            android:layout_toStartOf="@+id/space" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mis facturas"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/textTitular"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/space"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="#4b5cb9"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            style="@style/Base.Animation.AppCompat.Dialog" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lvFactura"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
+
+</RelativeLayout>

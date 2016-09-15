@@ -1,0 +1,96 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ec.com.altura.aclient.ContactanosFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:padding="10dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Canal oficial en Twiter"
+            android:id="@+id/textView16"
+            android:textSize="25dp"
+            android:textColor="#010101" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\@HClinico"
+            android:id="@+id/textView17"
+            android:textSize="35dp"
+            android:textColor="#5161bb" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="51dp">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton"
+                android:src="@mipmap/ic_twitter"
+                android:background="#fafafa"
+                android:layout_weight="0.12" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton2"
+                android:src="@mipmap/ic_facebook"
+                android:background="#fafafa"
+                android:layout_weight="0.12"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageButton"
+                android:layout_toEndOf="@+id/imageButton" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton3"
+                android:src="@mipmap/ic_youtube"
+                android:background="#fafafa"
+                android:layout_weight="0.12"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageButton2"
+                android:layout_toEndOf="@+id/imageButton2" />
+        </RelativeLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:text="Realiza tus consultas a través de nuestro canal oficial de atención al cliente. Nuestro horario de atención es de lunes a viernes de 9h a 21h y los sábados de 9h a 14h"
+            android:id="@+id/textView2"
+            android:textSize="18dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:text=" Atención al cliente "
+            android:id="@+id/btnLlamar"
+            android:drawableLeft="@drawable/ic_call_24dp"
+            android:background="@color/md_indigo_500"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:layout_weight="0.02" />
+
+    </LinearLayout>
+</FrameLayout>
