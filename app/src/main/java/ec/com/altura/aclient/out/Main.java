@@ -195,9 +195,9 @@ public class Main extends AppCompatActivity
         //getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, fragment) .commit();
 
         //agregarServcio(codigo);
-         progress = new ProgressDialog(this);
+        progress = new ProgressDialog(this);
         progress.setMessage("Actualizando datos, por favor espere...");
-        new MyTask(progress,codigo).execute();
+        new MyTask(progress, codigo).execute();
         //actualizar
         miFragmenList = true;
         fragment = new Fragment();
@@ -206,8 +206,6 @@ public class Main extends AppCompatActivity
         getFragmentManager().beginTransaction()
                 .replace(R.id.contentMain, lFragment)
                 .commit();
-        //Toast.makeText(this, "lo oprimio",
-        // Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -221,91 +219,93 @@ public class Main extends AppCompatActivity
         try {   // codigo,datos_factura,cabecera_factur- esto llega del servidor
             String jsDatosFActura = consultarDetallesParam(codigo);
             String jsCabeceraServicio = consultarCabesera(codigo);
-            JSONArray JsaCabesera=new JSONArray(jsCabeceraServicio);
+            JSONArray JsaCabesera = new JSONArray(jsCabeceraServicio);
 
 
-            String fch2="ini";
-            boolean estado=false,valor=false;
-            JSONObject JsDatosPaciente =new JSONObject();
-            JSONArray jsArrayPAciente =new JSONArray();
-            if(JsaCabesera.length()>0){
+            String fch2 = "ini";
+            boolean estado = false, valor = false;
+            JSONObject JsDatosPaciente = new JSONObject();
+            JSONArray jsArrayPAciente = new JSONArray();
+            if (JsaCabesera.length() > 0) {
                 //consultar jason
-               //{"idparametros_paciente":"31","nombre":"GLUCOSA","valor":"10","fechaIngreso":"2016\/07\/26"},
+                //{"idparametros_paciente":"31","nombre":"GLUCOSA","valor":"10","fechaIngreso":"2016\/07\/26"},
                 JSONArray jsonarrayCabecera = new JSONArray(jsDatosFActura);
-                for (int i=0;i<jsonarrayCabecera.length();i++){
+                for (int i = 0; i < jsonarrayCabecera.length(); i++) {
                     JSONObject jsonobject = jsonarrayCabecera.getJSONObject(i);
-                    String fch=jsonobject.getString("fechaIngreso");
+                    String fch = jsonobject.getString("fechaIngreso");
 
-                    if(!fch.equals(fch2)){
-                        if(!fch2.equals("ini")){
-                            if(!estado)JsDatosPaciente.put("ESTADO","Saludable");
+                    if (!fch.equals(fch2)) {
+                        if (!fch2.equals("ini")) {
+                            if (!estado) JsDatosPaciente.put("ESTADO", "Saludable");
 
-                            if(!valor) JsDatosPaciente.put("VALOR","*****");
-                            valor=false;
-                            estado=false;
+                            if (!valor) JsDatosPaciente.put("VALOR", "*****");
+                            valor = false;
+                            estado = false;
                             //if(jsonarrayCabecera.length()==i+1)JsDatosPaciente.put("fechaIngreso",fch);
                             jsArrayPAciente.put(JsDatosPaciente);
                             //fch2="ini";
-                            JsDatosPaciente=new JSONObject();  }
+                            JsDatosPaciente = new JSONObject();
+                        }
 
-                        JsDatosPaciente.put("fechaIngreso",fch);
+                        JsDatosPaciente.put("fechaIngreso", fch);
 
-                        if(jsonarrayCabecera.length()==i+1){
+                        if (jsonarrayCabecera.length() == i + 1) {
 
-                            if(jsonobject.getString("nombre").equals("ESTADO") & estado==false){
-                                JsDatosPaciente.put("ESTADO",jsonobject.getString("valor"));
-                                estado=true;
+                            if (jsonobject.getString("nombre").equals("ESTADO") & estado == false) {
+                                JsDatosPaciente.put("ESTADO", jsonobject.getString("valor"));
+                                estado = true;
                             }
-                            if(jsonobject.getString("nombre").equals("VALOR") & valor==false){
-                                JsDatosPaciente.put("VALOR",jsonobject.getString("valor"));
-                                valor=true;
+                            if (jsonobject.getString("nombre").equals("VALOR") & valor == false) {
+                                JsDatosPaciente.put("VALOR", jsonobject.getString("valor"));
+                                valor = true;
                             }
-                            if(!estado)JsDatosPaciente.put("ESTADO","Saludable");
+                            if (!estado) JsDatosPaciente.put("ESTADO", "Saludable");
 
-                            if(!valor) JsDatosPaciente.put("VALOR","*****");
-                            valor=false;
-                            estado=false;
+                            if (!valor) JsDatosPaciente.put("VALOR", "*****");
+                            valor = false;
+                            estado = false;
                             //if(jsonarrayCabecera.length()==i+1)JsDatosPaciente.put("fechaIngreso",fch);
                             jsArrayPAciente.put(JsDatosPaciente);
                             //fch2="ini";
-                            JsDatosPaciente=new JSONObject();}
-
-                        fch2=fch; }
-                   else  if(jsonarrayCabecera.length()==i+1){
-
-                        if(jsonobject.getString("nombre").equals("ESTADO") & estado==false){
-                            JsDatosPaciente.put("ESTADO",jsonobject.getString("valor"));
-                            estado=true;
+                            JsDatosPaciente = new JSONObject();
                         }
-                        if(jsonobject.getString("nombre").equals("VALOR") & valor==false){
-                            JsDatosPaciente.put("VALOR",jsonobject.getString("valor"));
-                            valor=true;
-                        }
-                        if(!estado)JsDatosPaciente.put("ESTADO","Saludable");
 
-                        if(!valor) JsDatosPaciente.put("VALOR","*****");
-                        valor=false;
-                        estado=false;
+                        fch2 = fch;
+                    } else if (jsonarrayCabecera.length() == i + 1) {
+
+                        if (jsonobject.getString("nombre").equals("ESTADO") & estado == false) {
+                            JsDatosPaciente.put("ESTADO", jsonobject.getString("valor"));
+                            estado = true;
+                        }
+                        if (jsonobject.getString("nombre").equals("VALOR") & valor == false) {
+                            JsDatosPaciente.put("VALOR", jsonobject.getString("valor"));
+                            valor = true;
+                        }
+                        if (!estado) JsDatosPaciente.put("ESTADO", "Saludable");
+
+                        if (!valor) JsDatosPaciente.put("VALOR", "*****");
+                        valor = false;
+                        estado = false;
                         //if(jsonarrayCabecera.length()==i+1)JsDatosPaciente.put("fechaIngreso",fch);
                         jsArrayPAciente.put(JsDatosPaciente);
                         //fch2="ini";
-                        JsDatosPaciente=new JSONObject();}
-
-                    if(jsonobject.getString("nombre").equals("ESTADO") & estado==false){
-                        JsDatosPaciente.put("ESTADO",jsonobject.getString("valor"));
-                        estado=true;
+                        JsDatosPaciente = new JSONObject();
                     }
-                    if(jsonobject.getString("nombre").equals("VALOR") & valor==false){
-                        JsDatosPaciente.put("VALOR",jsonobject.getString("valor"));
-                        valor=true;
+
+                    if (jsonobject.getString("nombre").equals("ESTADO") & estado == false) {
+                        JsDatosPaciente.put("ESTADO", jsonobject.getString("valor"));
+                        estado = true;
+                    }
+                    if (jsonobject.getString("nombre").equals("VALOR") & valor == false) {
+                        JsDatosPaciente.put("VALOR", jsonobject.getString("valor"));
+                        valor = true;
                     }
                     //fechaIngreso
-                    }
+                }
                 cuentas.insertCuenta(codigo, jsArrayPAciente.toString(), jsCabeceraServicio, Login.IDUSAARIO);
-                insertarDetalleFactura(codigo,jsDatosFActura);
+                insertarDetalleFactura(codigo, jsDatosFActura);
                 progress.setMessage("Paciente agregado correctamente");
-            }
-            else  //Toast.makeText(this, "Paciente no encontrado", Toast.LENGTH_SHORT).show();
+            } else  //Toast.makeText(this, "Paciente no encontrado", Toast.LENGTH_SHORT).show();
                 progress.setMessage("Paciente no registrado");
         } catch (Exception e) {
             Log.e(e);
@@ -322,7 +322,7 @@ public class Main extends AppCompatActivity
 
         try {
             detalleFactura.delete(codigo);
-            for (int i=0;i<jsonarrayParametros.length();i++){
+            for (int i = 0; i < jsonarrayParametros.length(); i++) {
                 JSONObject jsonobject = jsonarrayParametros.getJSONObject(i);
                 detalleFactura.insertFactura(jsonobject.getString("fechaIngreso"), jsonobject.getString("nombre"), jsonobject.getString("valor"), codigo);
             }
@@ -362,14 +362,14 @@ public class Main extends AppCompatActivity
                 "]" +
                 "}";
         //String jsDetalleFactura2=consultarRubrosFactura(codigo);
-        String jsDetalleFactura2=jsDetalleFactura;
+        String jsDetalleFactura2 = jsDetalleFactura;
         try {
             //jsDatosFactura = new JSONObject(jsDetalleFactura);
             jsDatosFactura = new JSONObject(jsDetalleFactura2);
             col = jsDatosFactura.getJSONObject("col");
             row = jsDatosFactura.getJSONArray("row");
             for (int i = 0; i < row.length(); i++) {
-            detalleFactura.insertFactura(row.getJSONArray(i).getString(0), row.getJSONArray(i).getString(1), String.valueOf(row.getJSONArray(i).getInt(2)), codigo);
+                detalleFactura.insertFactura(row.getJSONArray(i).getString(0), row.getJSONArray(i).getString(1), String.valueOf(row.getJSONArray(i).getInt(2)), codigo);
             }
         } catch (Exception e) {
             Log.e(e.getMessage());
@@ -382,7 +382,7 @@ public class Main extends AppCompatActivity
         Server s = new Server();
         java.util.List<NameValuePair> params = new ArrayList<NameValuePair>();
 
-        params.add (new BasicNameValuePair("VARIABLE", codigoServicio));
+        params.add(new BasicNameValuePair("VARIABLE", codigoServicio));
 
         String json = null;
         if (android.os.Build.VERSION.SDK_INT > 9) {
@@ -409,7 +409,7 @@ public class Main extends AppCompatActivity
         Server s = new Server();
         java.util.List<NameValuePair> params = new ArrayList<NameValuePair>();
 
-        params.add (new BasicNameValuePair("idPaciente", codigoServicio));
+        params.add(new BasicNameValuePair("idPaciente", codigoServicio));
 
         String json = null;
         if (android.os.Build.VERSION.SDK_INT > 9) {
@@ -431,13 +431,6 @@ public class Main extends AppCompatActivity
 
     }
 
-
-
-
-
-
-    //{"row":[["9873285","04-02-2016","14-02-2016","39.08","0.00","PAGADA","295"],["9579015","05-01-2016","15-01-2016","29.12","0.00","PAGADA","212"],["9304736","03-12-2015","13-12-2015","31.58","0.00","PAGADA","199"],["9037251","05-11-2015","15-11-2015","30.57","0.00","PAGADA","190"],["8728554","04-10-2015","14-10-2015","30.02","0.00","PAGADA","185"],["8409186","03-09-2015","13-09-2015","36.88","0.00","PAGADA","244"],["8125525","02-08-2015","12-08-2015","49.53","0.00","PAGADA","378"],["7826744","02-07-2015","12-07-2015","31.31","0.00","PAGADA","231"],["7539440","02-06-2015","12-06-2015","49.07","0.00","PAGADA","343"],["7237823","02-05-2015","12-05-2015","34.42","0.00","PAGADA","257"],["6952295","02-04-2015","12-04-2015","25.86","0.00","PAGADA","150"],["6656201","03-03-2015","13-03-2015","14.31","0.00","PAGADA","123"]],
-    // "col":{"ESTADO_FACTURA":5,"CONSUMO_KWH":6,"CODIGO_FACTURA":0,"MONTO_FACTURA":3,"FECHA_EMISION":1,"FECHA_VENCIMIENTO":2,"SALDO_FACTURA":4}}
     public String consultarDatosFactura(String codigoServicio) {
         Server s = new Server();
         URLData data = new URLData("query");
@@ -459,11 +452,10 @@ public class Main extends AppCompatActivity
         } catch (JSONException e) {
             android.util.Log.e("DEMO", "ERROR", e);
         }
-       // "col":{"ESTADO_FACTURA":5,"CONSUMO_KWH":6,"CODIGO_FACTURA":0,"MONTO_FACTURA":3,"FECHA_EMISION":1,"FECHA_VENCIMIENTO":2,"SALDO_FACTURA":4}}
-    return json.toString();
+        // "col":{"ESTADO_FACTURA":5,"CONSUMO_KWH":6,"CODIGO_FACTURA":0,"MONTO_FACTURA":3,"FECHA_EMISION":1,"FECHA_VENCIMIENTO":2,"SALDO_FACTURA":4}}
+        return json.toString();
 
     }
-
 
 
     public String consultarRubrosFactura(String codigoServicio) {
@@ -494,14 +486,13 @@ public class Main extends AppCompatActivity
     }
 
 
-
     public class MyTask extends AsyncTask<Void, Void, Void> {
 
         ProgressDialog progress;
         //MainActivity act;
         String codigo;
 
-        public MyTask(ProgressDialog progress,String codigo) {
+        public MyTask(ProgressDialog progress, String codigo) {
             this.progress = progress;
             this.codigo = codigo;
         }

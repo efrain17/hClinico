@@ -13,7 +13,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import ec.com.altura.aclient.Factura2;
-import ec.com.altura.aclient.R;
+
 import ec.com.altura.aclient.out.CuentasActivity;
 import ec.com.altura.aclient.out.Factura;
 import ec.com.altura.aclient.out.Login;

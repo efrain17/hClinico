@@ -3,9 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 'Google Inc.:Google APIs:23'
     buildToolsVersion '23.0.3'
-
     defaultConfig {
-        applicationId "ec.com.altura.aclient"
+        applicationId 'ec.com.altura.aclient'
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
@@ -17,7 +16,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES.txt'
         exclude 'META-INF/LICENSE.txt'
@@ -29,9 +27,10 @@ android {
         exclude 'META-INF/license.txt'
         exclude 'META-INF/dependencies.txt'
     }
-
     dexOptions {
         incremental true
+    }
+    productFlavors {
     }
 }
 

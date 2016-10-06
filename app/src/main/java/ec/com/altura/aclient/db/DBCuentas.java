@@ -112,11 +112,6 @@ public class DBCuentas extends Base {
             jsDatosFactura = new JSONObject(res.getString("datos_factura"));
             col = jsDatosFactura.getJSONObject("col");
             row = jsDatosFactura.getJSONArray("row");
-            //numero factura, fecha, valor , estado
-            //String jsDatosFActura= "{col:{numFactura:0,fecha:1,valor:2,saldo:3,estado:4,consumo:5}, " +//         "row:[[\"1234\",\"enero\",90,0,\"activo\",122],[\"4567\",\"febrero\",90,0,\"activo\",122]]}";
-            //numFactura:0,fecha_emision:1,fecha_vencimiento:2,monto:3,saldo:4,estado:5,consumo
-            //"col":{"ESTADO_FACTURA":5,"CONSUMO_KWH":6,"CODIGO_FACTURA":0,"MONTO_FACTURA":3,"FECHA_EMISION":1,"FECHA_VENCIMIENTO":2,"SALDO_FACTURA":4}}
-
             for (int i = 0; i < row.length(); i++) {
                 list.addRow(row.getJSONArray(i).getString(0), row.getJSONArray(i).getString(1), String.valueOf(row.getJSONArray(i).getString(3)), row.getJSONArray(i).getString(5));
             }
@@ -189,8 +184,6 @@ public class DBCuentas extends Base {
 
         while (res.next()) {
             //llena json cabecera de servicio
-            //String [] srow = (String []) res.getData(new StringArrayRowData());
-            //list.addRow(new ListItem().set(srow));
             jsCabecera = new JSONObject(res.getString("cabecera_servicio"));
             col = jsCabecera.getJSONObject("col");
             row = jsCabecera.getJSONArray("row");

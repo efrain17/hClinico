@@ -23,11 +23,6 @@ public class ContentMain extends AppCompatActivity {
         }
     }
     protected static void LoadCreate(View view) {
-        /*ListView listView = (ListView)view.findViewById(R.id.main_list);
-        List list = new List(new BasicLoaderGrid(),R.layout.row_list_main);
-        list.addRow(R.drawable.ic_flash_on_24dp,"Hola Mundo","Sync")
-                .addRow(R.drawable.ic_flash_on_24dp,"Hola Mundo","Sync")
-                .addRow(R.drawable.ic_flash_on_24dp, "Hola Mundo", "Sync");
-        listView.setAdapter(new Adpater(view.getContext(), list));*/
+
     }
 }

@@ -122,7 +122,6 @@ public class CuentasActivity extends AppCompatActivity implements Dialogo_person
     @Override
     public void onPossitiveButtonClick(String codigo) {
 
-        agregarServcio(codigo);
         cargarLista();
         //Toast.makeText(this, "lo oprimio",
                // Toast.LENGTH_SHORT).show();
@@ -134,50 +133,7 @@ public class CuentasActivity extends AppCompatActivity implements Dialogo_person
     }
 
 
-    public void agregarServcio(String codigo){
 
-        //ingresa con json en la tabla cuentas
-        try {   // codigo,datos_factura,cabecera_factur- esto llega del servidor
-            String jsDatosFActura= "{col:{numFactura:0,fecha:1,valor:2,saldo:3,estado:4,consumo:5}, " +
-                    "row:[" +
-                    "[\"1234\",\"enero\",90,0,\"No pagado\",122]," +
-                    "[\"4567\",\"febrero\",90,0,\"No pagado\",122]," +
-                    "[\"8921\",\"marzo\",90,0,\"Pagago\",122]," +
-                    "[\"8923\",\"abril\",90,0,\"activo\",122]," +
-                    "[\"4567\",\"mayo\",90,0,\"Pagado\",122]," +
-                    "[\"0001\",\"junio\",90,0,\"No pagado\",122]," +
-                    "[\"0001\",\"julio\",90,0,\"No pagado\",122]," +
-                    "[\"0002\",\"agosto\",90,0,\"No pagado\",122]," +
-                    "[\"0008\",\"septiembre\",90,0,\"No pagado\",122]," +
-                    "[\"0004\",\"octubre\",90,0,\"No pagado\",122]" +
-                    "]" +
-                    "}";
-            //  String jsDatosFActura= "{col:{numFactura:0,fecha:1,valor:2,saldo:3,estado:4,consumo:5}, " +
-            //        "row:[[\"1234\",\"enero\",90,0,\"No pagado\",122],[\"4567\",\"febrero\",90,0,\"No pagado\",122]]}";
-            // esto tambien llega del servidor
-            String jsCabeceraServicio = "{col:{direccion:0,nombre:1}, row:[[\"Manta Azul\",\"Elias Vargas Vargas\"]]}";
-
-            //esto lo ingresa el usuario
-            // Random ram=new Random();
-            //int i=new Random().nextInt();
-            String codigoServico=codigo;
-            //jason
-            JSONObject ofac = new JSONObject(jsDatosFActura);
-            JSONObject col = ofac.getJSONObject("col");
-            JSONArray row = ofac.getJSONArray("row");
-            //reccorido del json
-                /*for(int i =0; i<row.length();i++){
-                    System.out.println(row.getJSONArray(i).getString(0));
-                    //  System.out.println(row.getJSONArray(i).getString(1));
-                }*/
-
-          //  cuentas.insertCuenta(codigoServico, jsDatosFActura, jsCabeceraServicio,Login.IDUSAARIO);
-            Toast.makeText(this, "Servicio agregado Correctamente",Toast.LENGTH_SHORT).show();
-        }
-        catch (Exception e) {
-            Log.e(e);
-        }
-    }
 
 
 
